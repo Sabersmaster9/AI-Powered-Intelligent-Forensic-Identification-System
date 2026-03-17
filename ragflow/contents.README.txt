@@ -1,0 +1,10 @@
+contents folder is encrypted for public repo safety.
+Encrypted file: contents.encrypted.bin
+Algorithm: AES-256-CBC
+Header format: ASCII marker + int32 IV length + IV + ciphertext
+Decryption key is NOT stored in this repository.
+
+Storage note for GitHub:
+- contents.encrypted.bin is split into parts to satisfy GitHub file size limits.
+- Merge command (PowerShell):
+  Get-Content .\ragflow\contents.encrypted.bin.part* -Encoding Byte -ReadCount 0 | Set-Content .\ragflow\contents.encrypted.bin -Encoding Byte
